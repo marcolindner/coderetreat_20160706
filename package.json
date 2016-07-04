@@ -1,10 +1,10 @@
 {
-  "name": "fecoderetreat)",
+  "name": "fecoderetreat",
   "version": "1.0.0",
   "description": "Example Package for FE Code Retreat",
   "main": "index.js",
   "scripts": {
-    "test": "build"
+    "karma": "karma start"
   },
   "author": "Marco Lindner",
   "license": "MIT",
