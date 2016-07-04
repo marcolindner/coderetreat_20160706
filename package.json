@@ -4,7 +4,7 @@
   "description": "Example Package for FE Code Retreat",
   "main": "index.js",
   "scripts": {
-    "karma": "karma start"
+    "test": "karma start --single-run"
   },
   "author": "Marco Lindner",
   "license": "MIT",
@@ -13,6 +13,7 @@
     "karma": "^1.1.0",
     "karma-chrome-launcher": "^1.0.1",
     "karma-cli": "^1.0.1",
+    "karma-coverage": "^1.0.0",
     "karma-jasmine": "^1.0.2",
     "karma-phantomjs-launcher": "^1.0.1",
     "phantomjs": "^2.1.7"
