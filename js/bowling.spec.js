@@ -1,52 +1,56 @@
-describe("BowlingGame", function() {
+
+/* global BowlingGame */
+'use strict';
+
+describe('BowlingGame', function () {
     var game;
 
-    beforeEach(function(){
+    beforeEach(function () {
         game = new BowlingGame();
     });
 
-    function rollMany (n, pins) {
+    function throwMany(n, pins) {
         for (var i = 0; i < n; i++) {
-            game.roll(pins)
+            game.throw(pins);
         }
     }
 
-    function rollSpare() {
-        game.roll(5);
-        game.roll(5);
+    function throwSpare() {
+        game.throw(5);
+        game.throw(5);
     }
 
-    function rollStrike() {
-        game.roll(10);
+    function throwStrike() {
+        game.throw(10);
     }
 
-    it("should handle gutter game", function() {
-        rollMany(20, 0);
+    it('should handle gutter game', function () {
+        throwMany(20, 0);
         expect(game.score()).toEqual(0);
     });
 
-    it("should handle all ones", function() {
-        rollMany(20, 1);
+    it('should handle all ones', function () {
+        throwMany(20, 1);
         expect(game.score()).toEqual(20);
     });
 
-    it("should handle one spare", function() {
-        rollSpare();
-        game.roll(3);
-        rollMany(17, 0);
+    it('should handle one spare', function () {
+        throwSpare();
+        game.throw(3);
+        throwMany(17, 0);
         expect(game.score()).toEqual(16);
     });
 
-    it("should handle one strike", function() {
-        rollStrike();
-        game.roll(3);
-        game.roll(4);
-        rollMany(16, 0);
+    it('should handle one strike', function () {
+        throwStrike();
+        game.throw(3);
+        game.throw(4);
+        throwMany(16, 0);
         expect(game.score()).toEqual(24);
     });
 
-    it("should handle a perfect game", function() {
-        rollMany(12, 10);
+    it('should handle a perfect game', function () {
+        throwMany(12, 10);
         expect(game.score()).toEqual(300);
     });
 });

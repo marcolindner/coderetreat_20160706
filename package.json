@@ -4,11 +4,19 @@
   "description": "Example Package for FE Code Retreat",
   "main": "index.js",
   "scripts": {
-    "test": "karma start --single-run"
+    "serve": "eslint ./js/*.js && karma start",
+    "test": "eslint ./js/*.js && karma start --single-run",
+    "lint": "eslint ./js/*.js"
   },
   "author": "Marco Lindner",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcolindner/coderetreat_20160706.git"
+  },
   "devDependencies": {
+    "eslint": "^3.0.1",
+    "eslint-plugin-jasmine": "^1.8.1",
     "jasmine-core": "^2.4.1",
     "karma": "^1.1.0",
     "karma-chrome-launcher": "^1.0.1",
